@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио | Александр</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .photo-container {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: #4a6491;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 14px;
+        }
+
+        .photo-placeholder i {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .info-container {
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+        }
+
+        section {
+            background-color: white;
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #4a6491;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid #eaeaea;
+            transition: all 0.3s;
+        }
+
+        .experience-item:hover, .education-item:hover {
+            border-left-color: #4a6491;
+            padding-left: 25px;
+        }
+
+        .job-period, .education-period {
+            color: #4a6491;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .job-title, .education-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .company, .institution {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .skill {
+            background-color: #eef2f7;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            color: #2c3e50;
+            transition: all 0.3s;
+        }
+
+        .skill:hover {
+            background-color: #4a6491;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+            margin-top: 40px;
+        }
+
+        .upload-instructions {
+            background-color: #f0f8ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 5px solid #4a6491;
+        }
+
+        .upload-instructions h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .upload-instructions ol {
+            margin-left: 20px;
+        }
+
+        .upload-instructions li {
+            margin-bottom: 10px;
+        }
+
+        .code {
+            background-color: #f1f1f1;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="profile-section">
+                <div class="photo-container">
+                    <img src="images/my-photo.jpg" alt="Фотография Александра" style="width:100%; height:100%; object-fit:cover;">
+                    <!-- После загрузки фотографии, замените div выше на:
+                    <img src="путь_к_вашей_фотографии.jpg" alt="Фотография Александра" style="width:100%; height:100%; object-fit:cover;">
+                    -->
+                </div>
+                <div class="info-container">
+                    <h1>Александр</h1>
+                    <p class="tagline">Старший специалист по качеству услуг | Учредитель ООО "БИТ"</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Уфа, Россия</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-birthday-cake"></i>
+                            <span>24 года</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>bqqstrdota@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="experience">
+            <h2>Опыт работы</h2>
+            <div class="experience-item">
+                <div class="job-period">2020 - 2021</div>
+                <div class="job-title">Аппаратчик производства</div>
+                <div class="company">ТПК "Полимер-Пласт"</div>
+            </div>
+            <div class="experience-item">
+                <div class="job-period">2021 - 2022</div>
+                <div class="job-title">Системный администратор</div>
+                <div class="company">ТПК "Полимер-Пласт"</div>
+            </div>
+            <div class="experience-item">
+                <div class="job-period">2022 - 2024</div>
+                <div class="job-title">Менеджер по продаже авиационной техники</div>
+                <div class="company">ОКБ "РОТОР"</div>
+            </div>
+            <div class="experience-item">
+                <div class="job-period">2023 - настоящее время</div>
+                <div class="job-title">Учредитель, директор, старший специалист по качеству услуг</div>
+                <div class="company">ООО "БИТ"</div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Стек технологий</h2>
+            <div class="skills-container">
+                <div class="skill">HTML</div>
+                <div class="skill">CSS</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">Python</div>
+                <div class="skill">C#</div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Образование</h2>
+            <div class="education-item">
+                <div class="education-period">2023</div>
+                <div class="education-title">Бакалавриат, "Управление качеством"</div>
+                <div class="institution">ФИРТ УГАТУ</div>
+            </div>
+            <div class="education-item">
+                <div class="education-period">2026 (ожидается)</div>
+                <div class="education-title">Магистратура, "Прикладная информатика"</div>
+                <div class="institution">УУНИТ ИИМРТ</div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Портфолио Александра &copy; 2024 </p>
+            
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    section.style.transition = 'opacity 0.5s, transform 0.5s';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+            
+            const skills = document.querySelectorAll('.skill');
+            skills.forEach(skill => {
+                skill.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.05)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 300);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
